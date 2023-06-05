@@ -1,0 +1,45 @@
+@import '../../style/variables.scss';
+
+.greeting {
+    margin-top: 45px;
+    color: $main-color;
+    font-size: 30px;
+
+    &__wrapper {
+        display: block;
+        width: 900px;
+        margin: 0 auto;
+        margin-top: 55px;
+    }
+    
+    &__items {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        width: 200px;
+        height: 300px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        ul, li {
+            list-style-type: none;
+        }
+
+        &-name {
+            text-align: left;
+            font-size: 24px;
+        }
+    }
+
+    .movie{
+        // &__item {
+        // background-color: #fff;
+        // }
+        // &__grid {
+        //     background-color: #c79b9b;
+        // }
+    }
+}
