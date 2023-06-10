@@ -1,4 +1,40 @@
-@import '../../style/variables.scss';
+.movie__search-form {
+    margin-top: 100px;
+    margin-bottom: 40px;
+    
+}
+
+.movie__search-error {
+    color: white;
+}
+
+.movie__search-wrapper {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.movie__search-label {
+    color: white;
+    font-size: 28px;
+}
+
+#movieName {
+    line-height: 35px;
+    width: 450px;
+    height: 50px;
+    font-size: 27px;
+    border: 2px solid #9610FF;
+    &:active {
+        border: 2px solid #9610FF;
+    }
+}
+button {
+    text-align: center;
+    width: 100px;
+}
+
 
 .movie{
     &__grid {
@@ -10,15 +46,14 @@
         margin-top: 80px;
     }
     &__item {
-        color: rgb(222, 244, 234);
         display: grid;
         width: 830px;
         grid-template-columns: 250px 542px;
         gap: 8px;
         padding-left: 20px;
-        border: 1px solid #0a140f;
+        border: 2px solid #9610FF;
         // background-color: #aba9a9fd;
-        background: linear-gradient(to left, rgb(61, 155, 127) 10%, transparent 85%);
+        background: linear-gradient(to left, rgb(61, 155, 127) , transparent 80%);
         &-button {
             height: 40px;
             text-align: center;
@@ -45,11 +80,9 @@
         font-size: 30px;
     }
     &__description {
-        font-weight: 400;
         padding: 10px;
     }
     &__rating {
-        color: black;
         position: absolute;
         bottom: 50px;
         right: 20px;

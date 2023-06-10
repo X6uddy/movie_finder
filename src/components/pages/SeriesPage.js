@@ -1,17 +1,13 @@
-import { useState } from "react";
-
 import InitialWindow from "../initialWindow/InitialWindow";
 import PageHeader from "../pageHeader/PageHeader";
-import SinglePage from "./SinglePage";
 
-const MainPage = () => {
-    
+const SeriesPage = () => {
     return (
         <>
         <PageHeader/>
-        <InitialWindow type = "movies"/>
+        <InitialWindow type = "series"/>
         </>
     )
 }
 
-export default MainPage;
+export default SeriesPage;

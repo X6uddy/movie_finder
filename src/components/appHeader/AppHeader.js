@@ -1,35 +1,46 @@
-import './appHeader.scss';
 import { NavLink, Link } from 'react-router-dom';
+
+import movieIcon from '../../resources/movieIcon.png'
+
+import './appHeader.scss';
+
 
 const AppHeader = () => {
     return (
         <header className="app__header">
+            <img src={movieIcon} alt="icon" className='app__icon' />
             <h1 className="app__title">
                 <Link to="/">
-                    <span>Movies</span> Finder portal
+                    Movies Finder portal
                 </Link>
             </h1>
             <nav className="app__menu">
                 <ul>
                     <li><NavLink 
                         end
-                        style={({isActive}) => ({color: isActive ? 'red' : 'inherit'})}
+                        style={({isActive}) => ({color: isActive ? 'rgb(110, 186, 163)' : 'inherit'})}
                         to="/"
                         > Movies </NavLink></li>
-                    /
+                    
                     <li><NavLink 
                         end
-                        style={({isActive}) => ({color: isActive ? 'red' : 'inherit'})}
+                        style={({isActive}) => ({color: isActive ? 'rgb(110, 186, 163)' : 'inherit'})}
                         to="/series"
                         
                         >Series </NavLink></li>
-                    /
+                    
                     <li><NavLink 
                         end
-                        style={({isActive}) => ({color: isActive ? 'red' : 'inherit'})}
+                        style={({isActive}) => ({color: isActive ? 'rgb(110, 186, 163)' : 'inherit'})}
                         to="/actors"
                         
                         >Actors </NavLink></li>
+                     <li><NavLink 
+                        end
+                        style={({isActive}) => ({color: isActive ? 'rgb(110, 186, 163)' : 'inherit'})}
+                        to="/search"
+                        
+                        >Search </NavLink></li>
                 </ul>
             </nav>
         </header>

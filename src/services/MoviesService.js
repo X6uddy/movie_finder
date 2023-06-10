@@ -1,44 +1,63 @@
 import { useHttp } from "../hooks/http.hook";
+import imgnotFound from '../resources/imgnotFound.jpg'
 
 const useMoviesService = () => {
 
-    const {loading, request, error, clearError} = useHttp();
-
-    const _apiBase = 'https://ott-details.p.rapidapi.com/advancedsearch';
-    const _pageOffset = 1;
-    const _startYear = 2022;
-    const _endYear = 2023;
-    const _minRate = 7;
-    const _maxRate = 10;
-    const _type = 'movie';
+    const {loading, getResource, error, clearError} = useHttp();
+    const _type = 'movies';
 
 
-    const getTrendingMovies = async (
-                                    offset = _pageOffset,
-                                    startYear = _startYear,
-                                    endYear = _endYear,
-                                    minRate = _minRate,
-                                    maxRate = _maxRate,
-                                    type = _type
-                                    ) => {
-        // const res = await request(`${_apiBase}?start_year=${startYear}&end_year=${endYear}&min_imdb=${minRate}&max_imdb=${maxRate}&language=english&type=${type}&sort=latest&page=${offset}`);
-        const res = await request(`https://ott-details.p.rapidapi.com/advancedsearch?start_year=2022&end_year=2023&min_imdb=7&max_imdb=10&language=english&type=movie&sort=latest&page=1`);
-        return res.results.map(_transformMovies);
+    const getTrendingMovies = async (type = _type) => {
+        const res = await getResource(`http://localhost:3000/popular_${type}`);
+        return res.map(_transformMovies);
     }; 
+
+    const getMovieById = async (type = _type, id) => {
+        const res = await getResource(`http://localhost:3000/popular_${type}?id=${id}`)
+        return res.map(_transformMovies);
+    };
+
+    const getSearchMovies = async (title) => {
+        const res = await getResource(`http://www.omdbapi.com/?t=${title}&apikey=4a9888d9&plot=full`);
+        return _transformSearch(res);
+    };
+
+    const getMovieByIdFromAPI = async (id) => {
+        const res = await getResource(`http://www.omdbapi.com/?i=${id}&apikey=4a9888d9`);
+        return _transformSearch(res);
+    };
+
+
 
     const _transformMovies = (movie) => {
         return {
-            id: movie.imdbid,
+            id: movie.id,
             title: movie.title,
-            description: movie.synopsis,
-            year: movie.released,
-            score: movie.imdbrating,
-            thumbnail: movie.imageurl,
-            type: movie.type
-        };
+            image: movie.image,
+            releaseYear: movie.releaseYear,
+            genre: movie.genre,
+            description: movie.description,
+            rating: movie.rating,
+            director: movie.director,
+            country: movie.country
+        }
     };
 
-    return {loading, error, clearError, getTrendingMovies};
+    const _transformSearch = (movie) => {
+        return {
+            id: movie.imdbID,
+            title: movie.Title,
+            image: movie.Poster,
+            releaseYear: movie.Year,
+            genre: movie.Genre,
+            description: `${movie.Plot.slice(0, 200)}...`,
+            rating: movie.imdbRating,
+            director: movie.Director,
+            country: movie.Country
+        }
+    }
+
+    return {loading, error, clearError, getSearchMovies, getTrendingMovies, getMovieById, getMovieByIdFromAPI};
 }
 
 export default useMoviesService;

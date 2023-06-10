@@ -1,20 +1,22 @@
 .button {
-    
     &__main {
+        cursor:pointer;
         text-decoration: none;
-        color: white;
+        background-color: rgb(60, 205, 135);
+        color: rgb(0, 0, 0);
         display: inline-block;
         position: relative;
         padding: 15px 30px;
-        border: 1px solid;
-        border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-        border-image-slice: 1;
+        border: 0;
+        border-image: linear-gradient(180deg, #333159, #333159, #333159, #333159);
+        // border-image-slice: 1;
         margin: 10px 20px;
-        font-family: 'Montserrat', sans-serif;
+        // font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         overflow: hidden;
         letter-spacing: 2px;
-        transition: .8s cubic-bezier(.165, .84, .44, 1);
+        transition: 0.8s cubic-bezier(.165, .84, .44, 1);
+        border-radius: 30px;
         &:before {
             content: "";
             position: absolute;
@@ -24,16 +26,22 @@
             width: 100%;
             z-index: -1;
             color: white;
-            background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-            transition: .8s cubic-bezier(.165, .84, .44, 1);
+            background: linear-gradient(180deg, #333159, #333159, #333159, #333159);
+            transition: 0.8s cubic-bezier(.165, .84, .44, 1);
+            border-radius: 30px;
           }
         &:hover {
-            background: rgba(255, 255, 255, 0);
+            background: rgba(6, 6, 6, 0);
+            color: white;
+            transition: 0.8s all;
+            border-radius: 30px;
           }
         &:hover:before {
+            transition: 0.8s all;
             bottom: 0%;
             top: auto;
             height: 100%;
+            border-radius: 30px;
           }
     }
     

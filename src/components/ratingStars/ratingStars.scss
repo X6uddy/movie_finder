@@ -1,0 +1,17 @@
+
+
+.ratingStars {
+    position: absolute;
+    bottom: 8px;
+    right: -60px;
+    background-image: url(../../resources/blackStar.png);
+    width: 520px;
+    scale: 0.7;
+    height: 50px; 
+    align-self: end;
+}
+
+.goldStars {
+    background-image: url(../../resources/goldStar.png);
+    height: 100%;
+}

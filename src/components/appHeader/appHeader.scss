@@ -4,16 +4,23 @@
     &__header {
         display: flex;
         justify-content: space-between;
-        background-color: rgb(228, 218, 218);
-        
+        padding: 10px 30px;
+        // background-color: rgba(204, 247, 198, 0.771);
     }
     &__title {
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 37px;
-        span {
-            color: $main-color;
+        a {
+            color: #fff;
         }
+        position: relative;
+        color: white;
+        font-weight: bold;
+        font-size: 37px;
+        line-height: 26px;
+    }
+    &__icon {
+        position: absolute;
+        left: 250px;
+        top: 66px;
     }
     &__menu {
         ul {
@@ -22,11 +29,24 @@
             justify-content: space-between;
             font-weight: bold;
             font-size: 24px;
-            line-height: 32px;
+            line-height: 38px;
             li {
-                margin: 0 8px;
-                a:hover {
-                    color: $main-color;
+                
+                color: white;
+                text-align: center;
+                align-items: center;
+                width: 122px;
+                height: 44px;
+                border: 2px solid #9610FF;
+                filter: drop-shadow(0px 9px 19px rgba(0, 0, 0, 0.15));
+                border-radius: 30px;
+                transition: all 0.9s;
+                margin-right: 16px;
+                // margin: 0 8px;
+                &:hover {
+                    transition: all 0.7s;
+                    scale: 1.2;
+                    color: rgb(131, 61, 61);
                 }
             }
         }

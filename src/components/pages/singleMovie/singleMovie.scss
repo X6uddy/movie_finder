@@ -1,0 +1,41 @@
+.single-movie {
+    display: grid;
+    grid-template-columns: 400px 850px;
+    gap: 50px;
+    color: rgb(168, 159, 159);
+    text-align: left;
+    margin-top: 50px;
+    &__image {
+        width: 100%;
+    }
+    &__title {
+        text-align: left;
+        font-size: 35px;
+        color: white;
+    }
+    .button__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 320px;
+        margin: 0;
+        margin-top: 30px;
+    }
+    h3 {
+        margin-top: 40px;
+        font-size: 27px;
+        margin-bottom: 20px;
+        color: white;
+    }
+    &__release, &__genre, &__director, &__descr, &__rating, &__country {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    span {
+        font-size: 18px;
+        color: white;
+    }
+    &__iconAdd {
+        width: 56px;
+    }
+}

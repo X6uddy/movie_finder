@@ -1,9 +1,9 @@
 @import './variables';
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,100;1,200;1,300;1,400&display=swap');
 @import './button';
 
 * {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,11 +12,12 @@
 }
 
 body {
-    background-color: #ffffff;
+    // background: no-repeat url(../resources/backImg.png);
+    background-color: #000000;
 }
 
 .app {
-    width: 1100px;
+    width: 1300px;
     margin: 0 auto;
     padding-top: 90px;
     text-align: center;

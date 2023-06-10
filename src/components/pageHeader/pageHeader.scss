@@ -1,0 +1,42 @@
+@import '../../style/variables.scss';
+
+.greeting {
+    margin-top: 45px;
+    color: $main-color;
+    font-size: 30px;
+
+    &__wrapper {
+        display: block;
+        margin: 0 auto; 
+        width: 1100px;
+        margin-top: 55px;
+    }
+    
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+    }
+    &__item {
+        border: 1px solid #9610FF;
+        &:hover {
+            scale: 1.2;
+            transition: all 0.8s;
+        }
+        transition: all 0.8s;
+        width: 200px;
+        height: 300px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        &-name {
+            color: #ffffff;
+            text-align: center;
+            transition: all 0.8s;
+            font-size: 24px;
+        }
+    }
+}
