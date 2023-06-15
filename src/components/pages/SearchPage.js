@@ -1,11 +1,11 @@
 import PageHeader from "../pageHeader/PageHeader";
 import SearchItem from "../searchItem/SearchItem";
 
-const SearchPage = () => {
+const SearchPage = ({favoriteList, setFavoritesList}) => {
     return (
         <>
         <PageHeader/>
-        <SearchItem type='search'/>
+        <SearchItem type='search' favoriteList={favoriteList} setFavoritesList={setFavoritesList}/>
         </>
     )
 }

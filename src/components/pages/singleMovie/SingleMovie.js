@@ -1,32 +1,17 @@
-import { useState } from 'react';
 
 import './singleMovie.scss';
-import addToList from '../../../resources/addWatchLict.png';
-import removeList from '../../../resources/removeWatchList.png';
 
 const SingleMovie = ({data}) => {
 
     const {title, image, releaseYear, genre, description, rating, director, country} = data;
 
-    const [addToFavorites, setWatchList] = useState(null);
-    const [itemArray, setItemArray] = useState([]);
 
-    const addToWatchList = () => {
-        setWatchList(addToFavorites => !addToFavorites);
-    }
 
-    const iconAdd = addToFavorites ? addToList : removeList;
-    const btnText = addToFavorites ? 'Добавить в список' : 'Убрать из списка';
     return (
         <div className="single-movie">
             <img src={image} alt={title} className="single-movie__image" />
             <div className="single-movie__info">
                 <h2 className="single-movie__title">{title}</h2>
-                <div className="single-movie__button">
-                    <button className="button button__main" onClick={addToWatchList}>
-                        <img src={iconAdd} alt="watchList" className='single-movie__iconAdd' /> {btnText}
-                    </button>
-                </div>
                 <h3>О фильме</h3>
                 <div className="single-movie__release">Год выпуска: <span>{releaseYear}</span></div>
                 <div className="single-movie__genre">Жанр: <span>{genre}</span></div>

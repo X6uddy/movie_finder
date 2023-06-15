@@ -13,7 +13,7 @@
 
 body {
     // background: no-repeat url(../resources/backImg.png);
-    background-color: #000000;
+    background-color: #1b4326;
 }
 
 .app {
@@ -23,3 +23,15 @@ body {
     text-align: center;
 }
 
+.movie__empty {
+    font-size: 25px;
+    margin: 0;
+    margin-top: 50px;
+    color: white;
+}
+.movie__count {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+    margin-top: 45px;
+}

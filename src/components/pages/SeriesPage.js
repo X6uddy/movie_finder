@@ -1,11 +1,11 @@
 import InitialWindow from "../initialWindow/InitialWindow";
 import PageHeader from "../pageHeader/PageHeader";
 
-const SeriesPage = () => {
+const SeriesPage = ({favoriteList, setFavoritesList}) => {
     return (
         <>
         <PageHeader/>
-        <InitialWindow type = "series"/>
+        <InitialWindow type = "series" favoriteList={favoriteList} setFavoritesList={setFavoritesList}/>
         </>
     )
 }

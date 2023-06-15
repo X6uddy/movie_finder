@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 
 import movies_greeting from '../../resources/movies_greeting.jpeg';
 import series_greeting from '../../resources/series_greeting.jpg';
-import actors_greeting from '../../resources/actors_greeting.jpg';
 import search_greeting from '../../resources/searchImg.png';
+import watchList_greeting from '../../resources/watchList.jpg';
+
 
 import './pageHeader.scss';
 
@@ -26,16 +27,16 @@ const PageHeader = () => {
                 </li>
 
                 <li className="greeting__item">
-                    <Link to={`/actors`}>
-                        <img src={actors_greeting} alt='actors' className="greeting__item-photo"/>
-                        <div className="greeting__item-name">Actors</div>
+                    <Link to={`/search`}>
+                        <img src={search_greeting} alt='search' className="greeting__item-photo"/>
+                        <div className="greeting__item-name">Search</div>
                     </Link>
                 </li>
 
                 <li className="greeting__item">
-                    <Link to={`/search`}>
-                        <img src={search_greeting} alt='search' className="greeting__item-photo"/>
-                        <div className="greeting__item-name">Search</div>
+                    <Link to={`/watchList`}>
+                        <img src={watchList_greeting} alt='search' className="greeting__item-photo"/>
+                        <div className="greeting__item-name">WatchList</div>
                     </Link>
                 </li>
             </ul>

@@ -4,12 +4,12 @@ import InitialWindow from "../initialWindow/InitialWindow";
 import PageHeader from "../pageHeader/PageHeader";
 import SinglePage from "./SinglePage";
 
-const MainPage = () => {
+const MainPage = ({favoriteList, setFavoritesList}) => {
     
     return (
         <>
         <PageHeader/>
-        <InitialWindow type = "movies"/>
+        <InitialWindow type = "movies" favoriteList={favoriteList} setFavoritesList={setFavoritesList}/>
         </>
     )
 }

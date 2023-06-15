@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage as FormikErrorMessage} from "formik";
 import * as Yup from 'yup';
 
+import ItemMovie from "../itemMovie/ItemMovie";
 import useMoviesService from "../../services/MoviesService";
-import RatingStars from "../ratingStars/RatingStars";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import Spinner from "../spinner/Spinner";
 
 import './searchItem.scss';
 
-const SearchItem = (props) => {
+const SearchItem = ({type, favoriteList, setFavoritesList}) => {
     
     const [item, setItem] = useState(null);
-    const {type} = props;
     const {loading, error, getSearchMovies, clearError} = useMoviesService();
 
 
@@ -27,29 +25,12 @@ const SearchItem = (props) => {
             .then(onMovieLoaded)
     }
 
-    const ratingStars = (rating) => {
-        let goldStarWidth = rating * 10;
-        return goldStarWidth;
-    } 
-
     const errorMessage = error ? <div className="char__search-critical-error"><ErrorMessage /></div> : null;
     const spinner = loading ? <Spinner/> : null;
     const results = !item ? null : item.title ?
-        <li
-        className='movie__item'
-        key={item.id}
-        >
-            <div className="movie__image">
-                <img src={item.image} alt={item.title}/>
-            </div>
-            <div className="movie-wrapper">
-                <div className="movie__title">{item.title}</div>
-                <div className="movie__description">{item.description}</div>
-                <Link to={`/${type}/${item.id}`} className="movie__item-button button__main">More Info</Link>
-                <RatingStars rating={ratingStars(item.rating)}/>
-                <div className="movie__rating">Рейтинг: {item.rating} / 10</div>
-            </div>
-        </li> 
+            <ul className="movie__grid">
+                <ItemMovie item={item} type={type} setFavoritesList={setFavoritesList} favoriteList={favoriteList} />
+            </ul>
     : 
     <div className="movie__search-error">
         The movie was not found. Check the name and try again

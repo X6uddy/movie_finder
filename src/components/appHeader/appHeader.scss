@@ -3,30 +3,35 @@
 .app {
     &__header {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        padding: 10px 30px;
         // background-color: rgba(204, 247, 198, 0.771);
     }
     &__title {
         a {
             color: #fff;
         }
-        position: relative;
         color: white;
         font-weight: bold;
         font-size: 37px;
-        line-height: 26px;
+        line-height: 37px;
+    }
+    .title__wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items:center;
+        justify-content: center;
     }
     &__icon {
-        position: absolute;
-        left: 250px;
-        top: 66px;
+        width: 64px;
+        margin-right: 10px;
+        transform: translateY(-10px);
     }
     &__menu {
         ul {
             list-style-type: none;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             font-weight: bold;
             font-size: 24px;
             line-height: 38px;
@@ -35,7 +40,7 @@
                 color: white;
                 text-align: center;
                 align-items: center;
-                width: 122px;
+                width: 150px;
                 height: 44px;
                 border: 2px solid #9610FF;
                 filter: drop-shadow(0px 9px 19px rgba(0, 0, 0, 0.15));

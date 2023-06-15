@@ -3,9 +3,9 @@ import goldStar from '../../resources/goldStar.png';
 
 import "./ratingStars.scss";
 
-const RatingStars = (props) => {
+const RatingStars = ({rating}) => {
     const starStyle = {
-        width: props.rating + '%'
+        width: rating + '%'
     }
     return (
         <div className="ratingStars">
