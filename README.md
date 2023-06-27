@@ -1,5 +1,6 @@
-В этом проекте показано умению работать с локальным json-сервером. Также проводилась работа с API. 
+В этом приложении я отрабатывал практику работу с json-server. Так же реализован поиск фильмов с использованием популярной API. В этом приложении можно добавить фильмы в список желаемых. 
 
+In this application, I practiced working with the json server. The search for movies using the popular API is also implemented. In this application, you can add movies to your wish list.
 
 
 # Getting Started with Create React App
